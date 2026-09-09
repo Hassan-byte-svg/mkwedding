@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f1e8;
+  color: #2c261f;
+  font-family: Outfit, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.invite {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+.texture,
+.pattern {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.texture {
+  opacity: 0.4;
+  background:
+    radial-gradient(1200px 700px at 50% 0%, #fffaf3 0%, transparent 62%),
+    linear-gradient(180deg, #faf7f1, #f6f1e8 40%, #efe6d6);
+}
+
+.pattern {
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath fill='none' stroke='%23b0894d' stroke-width='0.8' d='M32 4 L36 16 L48 20 L36 24 L32 36 L28 24 L16 20 L28 16 Z'/%3E%3C/svg%3E");
+  background-size: 64px 64px;
+}
+
+.hero,
+.section,
+.close {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 1.25rem 3.5rem;
+  text-align: center;
+}
+
+.frame {
+  pointer-events: none;
+  position: absolute;
+  inset: 0.9rem;
+}
+
+.frame span {
+  position: absolute;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 0 solid rgba(176, 137, 77, 0.45);
+}
+
+.frame .tl {
+  top: 0;
+  left: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+.frame .tr {
+  top: 0;
+  right: 0;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+.frame .bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+.frame .br {
+  right: 0;
+  bottom: 0;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+.float {
+  position: absolute;
+  width: 64px;
+  color: #b0894d;
+  opacity: 0.28;
+  animation: float 9s ease-in-out infinite;
+}
+
+.float.a {
+  top: 14%;
+  left: 7%;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.eyebrow,
+.kicker,
+.label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: #b0894d;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 8rem;
+  height: 1px;
+  margin: 1.4rem auto;
+  background: linear-gradient(90deg, transparent, #c9a56a, transparent);
+}
+
+.name {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.6rem, 9vw, 6.2rem);
+  font-weight: 500;
+  line-height: 0.92;
+  color: #1a1612;
+  animation: reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.bride {
+  animation-delay: 0.15s;
+}
+
+.groom {
+  animation-delay: 0.5s;
+}
+
+.weds {
+  margin: 0.85rem 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.05rem, 3vw, 1.5rem);
+  font-style: italic;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b0894d;
+}
+
+.date-hero {
+  margin-top: 1.7rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.line {
+  max-width: 26rem;
+  margin: 1.5rem auto 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: #6d6458;
+}
+
+.section {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 4.2rem 1.25rem;
+  text-align: center;
+}
+
+.heading,
+.card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+
+.heading {
+  margin: 0.6rem 0 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.grid,
+.contacts,
+.buttons {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.card {
+  border: 1px solid rgba(176, 137, 77, 0.38);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 1.6rem 1.3rem;
+  text-align: left;
+}
+
+.card h3 {
+  margin: 0.55rem 0 0;
+  font-size: 1.5rem;
+}
+
+.copy {
+  margin: 0.35rem 0 0;
+  color: #6d6458;
+  font-size: 0.95rem;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 1.6rem;
+}
+
+.cell {
+  border: 1px solid rgba(176, 137, 77, 0.32);
+  padding: 0.85rem 0.3rem;
+}
+
+.num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.5rem, 4.5vw, 2.3rem);
+}
+
+.unit {
+  margin-top: 0.35rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6d6458;
+}
+
+.today {
+  margin-top: 1.4rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+.map {
+  margin-top: 1.3rem;
+  min-height: 140px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(176, 137, 77, 0.3);
+  text-align: center;
+  padding: 1.4rem 1rem;
+}
+
+.map p {
+  margin: 0.3rem 0 0;
+  color: #6d6458;
+}
+
+.buttons {
+  margin-top: 1.4rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.btn.gold {
+  color: #fffaf3;
+  background: #b0894d;
+  border: 1px solid #9a743f;
+}
+
+.btn.gold:hover {
+  background: #9a743f;
+}
+
+.btn.ghost {
+  color: #1a1612;
+  border: 1px solid #b0894d;
+}
+
+.btn.ghost:hover {
+  background: rgba(176, 137, 77, 0.1);
+}
+
+.contacts {
+  margin-top: 1.4rem;
+  text-align: left;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: #1a1612;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.card a:hover {
+  color: #b0894d;
+  border-bottom-color: #ddc89a;
+}
+
+.close {
+  padding: 2.5rem 1.25rem 4rem;
+  text-align: center;
+}
+
+.close p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6d6458;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .grid,
+  .buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+  }
+}
