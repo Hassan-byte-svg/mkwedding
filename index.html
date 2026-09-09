@@ -28,10 +28,29 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="locked">
+    <div class="doors" id="doors" role="button" tabindex="0" aria-label="Tap to open the invitation">
+      <div class="door left" aria-hidden="true">
+        <div class="door-face">
+          <span class="mono">M</span>
+        </div>
+      </div>
+      <div class="door right" aria-hidden="true">
+        <div class="door-face">
+          <span class="mono">H</span>
+        </div>
+      </div>
+      <div class="door-ui">
+        <p class="door-kicker">You are invited</p>
+        <p class="door-names">Malyika &amp; Hammad</p>
+        <p class="open-btn">Tap to open</p>
+      </div>
+    </div>
+
     <article class="invite">
       <div class="texture" aria-hidden="true"></div>
       <div class="pattern" aria-hidden="true"></div>
+      <div class="glow" aria-hidden="true"></div>
 
       <header class="hero">
         <div class="frame" aria-hidden="true">
@@ -42,32 +61,37 @@
           <path d="M28 88c8-14 10-28 8-42M92 88c-8-14-10-28-8-42" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
           <circle cx="60" cy="28" r="2.2" fill="currentColor" />
         </svg>
-        <p class="eyebrow">Wedding Invitation</p>
-        <div class="divider" aria-hidden="true"></div>
+        <svg class="float b" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path d="M18 102c22-6 38-22 44-44 4 18 18 32 40 38" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
+          <circle cx="60" cy="28" r="2.2" fill="currentColor" />
+        </svg>
+        <p class="eyebrow reveal-hero">Wedding Invitation</p>
+        <div class="divider reveal-hero" aria-hidden="true"></div>
         <h1 class="name bride">Malyika Khan</h1>
         <p class="weds">Weds</p>
         <h2 class="name groom">Hammad Saif</h2>
-        <p class="date-hero">14 October 2026</p>
-        <p class="line">Together with their families,<br />we invite you to celebrate their special day.</p>
+        <p class="date-hero reveal-hero">14 October 2026</p>
+        <p class="line reveal-hero">Together with their families,<br />we invite you to celebrate their special day.</p>
+        <p class="scroll-hint reveal-hero">Scroll to details</p>
       </header>
 
       <section class="section">
-        <p class="kicker">Counting the moments</p>
-        <h2 class="heading">Until we gather</h2>
-        <div id="countdown" class="countdown" role="timer" aria-live="polite"></div>
+        <p class="kicker reveal">Counting the moments</p>
+        <h2 class="heading reveal">Until we gather</h2>
+        <div id="countdown" class="countdown reveal" role="timer" aria-live="polite"></div>
       </section>
 
       <section class="section">
-        <p class="kicker">The celebration</p>
-        <h2 class="heading">Event details</h2>
-        <div class="divider" aria-hidden="true"></div>
+        <p class="kicker reveal">The celebration</p>
+        <h2 class="heading reveal">Event details</h2>
+        <div class="divider reveal" aria-hidden="true"></div>
         <div class="grid">
-          <div class="card">
+          <div class="card reveal">
             <p class="label">Date</p>
             <h3>14 October 2026</h3>
             <p class="copy">A day of blessing, gathering, and joy.</p>
           </div>
-          <div class="card">
+          <div class="card reveal">
             <p class="label">Venue</p>
             <h3>The Millennium Marque</h3>
             <p class="copy">E-11/4, Islamabad</p>
@@ -76,7 +100,7 @@
       </section>
 
       <section class="section">
-        <div class="card">
+        <div class="card reveal">
           <p class="label">Location</p>
           <h3>The Millennium Marque</h3>
           <p class="copy">E-11/4, Islamabad, Pakistan</p>
@@ -106,16 +130,16 @@
       </section>
 
       <section class="section">
-        <p class="kicker">For information contact</p>
-        <h2 class="heading">We are here to help</h2>
-        <div class="divider" aria-hidden="true"></div>
+        <p class="kicker reveal">For information contact</p>
+        <h2 class="heading reveal">We are here to help</h2>
+        <div class="divider reveal" aria-hidden="true"></div>
         <div class="contacts">
-          <div class="card">
+          <div class="card reveal">
             <p class="label">Contact</p>
             <h3>HASSAN KHAN</h3>
             <a href="tel:+923275602384">03275602384</a>
           </div>
-          <div class="card">
+          <div class="card reveal">
             <p class="label">Contact</p>
             <h3>NADEEM QAISER</h3>
             <a href="tel:+923465009988">03465009988</a>
@@ -125,7 +149,7 @@
 
       <footer class="close">
         <div class="divider" aria-hidden="true"></div>
-        <p>With love, the families of Malyika &amp; Hammad</p>
+        <p class="reveal">With love, the families of Malyika &amp; Hammad</p>
       </footer>
     </article>
     <script src="script.js"></script>
