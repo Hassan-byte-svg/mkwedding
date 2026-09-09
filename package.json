@@ -1,0 +1,7 @@
+{
+  "name": "mkwedding",
+  "private": true,
+  "scripts": {
+    "build": "echo Static wedding invitation"
+  }
+}
