@@ -29,61 +29,119 @@ body.locked {
   position: fixed;
   inset: 0;
   z-index: 40;
-  background: #2a040b;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(196, 20, 50, 0.35), transparent 48%),
+    #2a040b;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
-.doors::before {
+.rod {
+  position: absolute;
+  top: 14px;
+  right: 6%;
+  left: 6%;
+  z-index: 4;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0d78a, #b8860b 55%, #8a6a18);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 35%);
+}
+
+.rod::before,
+.rod::after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-  height: 42px;
-  pointer-events: none;
-  background: linear-gradient(180deg, #1a0207, #6e0a18);
-  box-shadow: 0 10px 18px rgb(0 0 0 / 25%);
+  top: -5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f3e0a8, #b8860b);
+}
+
+.rod::before {
+  left: -8px;
+}
+
+.rod::after {
+  right: -8px;
 }
 
 .door {
   position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
+  top: 18px;
+  width: 58%;
+  height: calc(100% - 18px);
   transition: transform 1.45s cubic-bezier(0.65, 0.05, 0.36, 1);
   will-change: transform;
 }
 
 .door.left {
-  left: 0;
+  left: -4%;
 }
 
 .door.right {
-  right: 0;
+  right: -4%;
 }
 
 .door-face {
   height: 100%;
-  background-image: repeating-linear-gradient(
-    90deg,
-    #2a040b 0px,
-    #5c0816 10px,
-    #9a1230 16px,
-    #6e0a1c 22px,
-    #3b0610 30px
-  );
+  background-image:
+    radial-gradient(80% 50% at 30% 18%, rgba(255, 170, 170, 0.16), transparent 55%),
+    repeating-linear-gradient(
+      96deg,
+      #3b0610 0px,
+      #6a101c 18px,
+      #a31a34 30px,
+      #7a1424 42px,
+      #4a0812 58px
+    );
+  box-shadow: 0 18px 40px rgb(0 0 0 / 28%);
 }
 
 .door.left .door-face {
-  border-right: 2px solid var(--gold);
-  box-shadow: inset -18px 0 28px rgb(0 0 0 / 28%);
+  border-radius: 8px 72% 58% 0 / 8px 34% 46% 0;
+  box-shadow:
+    inset -24px 0 36px rgb(0 0 0 / 22%),
+    8px 12px 28px rgb(0 0 0 / 28%);
 }
 
 .door.right .door-face {
-  border-left: 2px solid var(--gold);
-  box-shadow: inset 18px 0 28px rgb(0 0 0 / 28%);
+  border-radius: 72% 8px 0 58% / 34% 8px 0 46%;
+  box-shadow:
+    inset 24px 0 36px rgb(0 0 0 / 22%),
+    -8px 12px 28px rgb(0 0 0 / 28%);
+}
+
+.tie {
+  position: absolute;
+  top: 40%;
+  z-index: 2;
+  width: 34px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0d78a, #b8860b);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 35%);
+}
+
+.tie::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 2px;
+  height: 46px;
+  background: linear-gradient(#d4af37, transparent);
+  transform: translateX(-50%);
+}
+
+.door.left .tie {
+  right: 22%;
+}
+
+.door.right .tie {
+  left: 22%;
 }
 
 .door-ui {
@@ -182,9 +240,9 @@ body.opened .doors {
 }
 
 .pattern {
-  opacity: 0.22;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M70 42c10 0 18 8 18 18 0 16-18 28-18 38 0-10-18-22-18-38 0-10 8-18 18-18z'/%3E%3Cpath d='M70 48c-8 4-12 12-12 12m24 0s-4-8-12-12'/%3E%3Cpath d='M70 98c-12 10-24 16-28 16m28-16c12 10 24 16 28 16'/%3E%3Cpath d='M52 86c-10 2-18-4-20-10m56 10c10 2 18-4 20-10'/%3E%3Ccircle cx='70' cy='58' r='4'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.9' opacity='0.55'%3E%3Cpath d='M22 22c5 0 9 4 9 9 0 8-9 14-9 19 0-5-9-11-9-19 0-5 4-9 9-9z'/%3E%3Cpath d='M118 108c5 0 9 4 9 9 0 8-9 14-9 19 0-5-9-11-9-19 0-5 4-9 9-9z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 140px 140px;
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23d4af37' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(80 62)' stroke-width='1.2'%3E%3Cpath d='M0-22c10-6 22 2 20 14 10 4 8 20-4 24 4 14-10 24-20 20-10 4-24-6-20-20-12-4-14-20-4-24C-22-20-10-28 0-22z'/%3E%3Cpath d='M0-8c8-4 12 2 10 8 4 2 2 10-4 10 2 8-6 12-10 8-4 4-12 0-10-8-6 0-8-8-4-10C-12-6-8-12 0-8z'/%3E%3Ccircle cx='0' cy='2' r='3.2'/%3E%3C/g%3E%3Cpath stroke-width='1.1' d='M80 86c-2 14-8 28-16 36m16-36c2 14 8 28 16 36'/%3E%3Cpath stroke-width='1.1' d='M70 108c-14 2-24-8-26-16m46 16c14 2 24-8 26-16'/%3E%3Cg transform='translate(28 28) scale(0.42)' stroke-width='2.2'%3E%3Cpath d='M0-22c10-6 22 2 20 14 10 4 8 20-4 24 4 14-10 24-20 20-10 4-24-6-20-20-12-4-14-20-4-24C-22-20-10-28 0-22z'/%3E%3C/g%3E%3Cg transform='translate(132 124) scale(0.42)' stroke-width='2.2'%3E%3Cpath d='M0-22c10-6 22 2 20 14 10 4 8 20-4 24 4 14-10 24-20 20-10 4-24-6-20-20-12-4-14-20-4-24C-22-20-10-28 0-22z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 160px 160px;
 }
 
 .glow {
