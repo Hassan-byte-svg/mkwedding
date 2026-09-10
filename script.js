@@ -1,7 +1,6 @@
 const WEDDING_AT = new Date("2026-10-16T00:00:00+05:00").getTime();
 const root = document.getElementById("countdown");
 const doors = document.getElementById("doors");
-const openBtn = document.getElementById("openDoors");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let opened = false;
 
@@ -74,8 +73,14 @@ if (reduceMotion) {
   document.body.classList.add("opened");
   document.body.classList.remove("locked");
   doors.style.display = "none";
-} else if (openBtn) {
-  openBtn.addEventListener("click", openInvitation);
+} else {
+  doors.addEventListener("pointerdown", openInvitation);
+  doors.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openInvitation();
+    }
+  });
 }
 
 if (render()) {
