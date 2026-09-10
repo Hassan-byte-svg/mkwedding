@@ -1,4 +1,4 @@
-const WEDDING_AT = new Date("2026-10-14T00:00:00+05:00").getTime();
+const WEDDING_AT = new Date("2026-10-16T00:00:00+05:00").getTime();
 const root = document.getElementById("countdown");
 const doors = document.getElementById("doors");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
