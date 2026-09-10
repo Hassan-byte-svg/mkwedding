@@ -1,0 +1,262 @@
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(122, 18, 32, 0.72), transparent 54%),
+    radial-gradient(circle at 50% 110%, rgba(90, 8, 18, 0.95), #140208 62%);
+}
+
+.gate-bg {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath fill='none' stroke='%23d4af37' stroke-opacity='0.18' stroke-width='0.7' d='M36 6l6 14 14 6-14 6-6 14-6-14-14-6 14-6z'/%3E%3C/svg%3E");
+  background-size: 72px 72px;
+  opacity: 0.55;
+}
+
+.dust {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e8c97a;
+  opacity: 0.35;
+  animation: drift 9s ease-in-out infinite;
+}
+
+.d1 { top: 18%; left: 16%; }
+.d2 { top: 28%; right: 18%; width: 3px; height: 3px; animation-delay: -3s; }
+.d3 { top: 62%; left: 10%; animation-delay: -5s; }
+.d4 { top: 72%; right: 12%; width: 4px; height: 4px; animation-delay: -2s; }
+.d5 { top: 40%; left: 8%; width: 2px; height: 2px; animation-delay: -6s; }
+.d6 { top: 22%; right: 8%; animation-delay: -4s; }
+
+@keyframes drift {
+  50% {
+    transform: translateY(-14px);
+    opacity: 0.6;
+  }
+}
+
+.side-floral {
+  pointer-events: none;
+  position: absolute;
+  top: 18%;
+  width: min(14vw, 72px);
+  opacity: 0.45;
+}
+
+.side-floral.left {
+  left: 2%;
+}
+
+.side-floral.right {
+  right: 2%;
+  transform: scaleX(-1);
+}
+
+.darwaza {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 430px);
+  height: min(86dvh, 720px);
+  perspective: 1400px;
+}
+
+.gate-light {
+  position: absolute;
+  inset: 12% 18% 8%;
+  border-radius: 50% 50% 12px 12px;
+  background: radial-gradient(circle at 50% 40%, rgba(232, 201, 122, 0.55), transparent 68%);
+  opacity: 0;
+  transition: opacity 0.85s ease;
+}
+
+body.opened .gate-light {
+  opacity: 1;
+}
+
+.arch {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  clip-path: polygon(8% 100%, 8% 40%, 14% 24%, 30% 8%, 50% 2%, 70% 8%, 86% 24%, 92% 40%, 92% 100%);
+  box-shadow: 0 24px 50px rgb(0 0 0 / 45%);
+}
+
+.arch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 0 10px rgba(212, 175, 55, 0.58),
+    inset 0 0 0 14px rgba(80, 10, 18, 0.92);
+}
+
+.panel {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.45s cubic-bezier(0.65, 0.05, 0.36, 1);
+  will-change: transform;
+}
+
+.panel.left {
+  transform-origin: left center;
+}
+
+.panel.right {
+  transform-origin: right center;
+}
+
+.panel-face {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #7a1424 0%, #4e0c16 55%, #2c070d 100%);
+}
+
+.panel.left .panel-face {
+  border-right: 1px solid rgba(232, 201, 122, 0.45);
+  box-shadow: inset -24px 0 30px rgb(0 0 0 / 25%);
+}
+
+.panel.right .panel-face {
+  border-left: 1px solid rgba(232, 201, 122, 0.45);
+  box-shadow: inset 24px 0 30px rgb(0 0 0 / 25%);
+}
+
+.jaali {
+  position: absolute;
+  inset: 12% 14%;
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath fill='none' stroke='%23d4af37' stroke-opacity='0.55' stroke-width='0.7' d='M18 3l4 11 11 4-11 4-4 11-4-11-11-4 11-4z'/%3E%3C/svg%3E");
+  background-size: 36px 36px;
+}
+
+.knob {
+  position: absolute;
+  top: 52%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f3e0a8, #b8860b);
+  box-shadow: 0 0 10px rgba(232, 201, 122, 0.55);
+}
+
+.panel.left .knob {
+  right: 10%;
+}
+
+.panel.right .knob {
+  left: 10%;
+}
+
+.gate-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22% 1.1rem 1.4rem;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.cordial {
+  margin: 0 0 0.7rem;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gate-bride,
+.gate-groom {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.7rem, 7vw, 2.55rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold-soft);
+}
+
+.gate-weds {
+  margin: 0.35rem 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gate-date {
+  margin: 0.85rem 0 1.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+
+.open-invite {
+  pointer-events: auto;
+  min-height: 3rem;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid var(--gold);
+  background: linear-gradient(180deg, #ead38a, #b8860b);
+  color: #3a1408;
+  font-family: Outfit, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.open-invite:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 26px rgba(232, 201, 122, 0.55);
+}
+
+body.opened .panel.left {
+  transform: rotateY(-95deg);
+}
+
+body.opened .panel.right {
+  transform: rotateY(95deg);
+}
+
+body.opened .gate-copy {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.opened .gate {
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .side-floral {
+    width: 42px;
+    opacity: 0.28;
+  }
+}

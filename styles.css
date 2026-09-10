@@ -694,9 +694,9 @@ body.opened .scroll-hint {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .doors,
-  .door,
-  .door-ui {
+  .gate,
+  .darwaza,
+  .gate-copy {
     display: none;
   }
 

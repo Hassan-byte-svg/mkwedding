@@ -27,25 +27,51 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="gate.css" />
   </head>
   <body class="locked">
-    <div class="doors" id="doors" role="button" tabindex="0" aria-label="Tap to open the invitation">
-      <div class="door left" aria-hidden="true">
-        <div class="door-face">
-          <span class="ice"></span>
-          <span class="snowflake"></span>
-        </div>
+    <div class="gate" id="doors" aria-hidden="false">
+      <div class="gate-bg" aria-hidden="true">
+        <span class="dust d1"></span>
+        <span class="dust d2"></span>
+        <span class="dust d3"></span>
+        <span class="dust d4"></span>
+        <span class="dust d5"></span>
+        <span class="dust d6"></span>
       </div>
-      <div class="door right" aria-hidden="true">
-        <div class="door-face">
-          <span class="ice"></span>
-          <span class="snowflake"></span>
+      <svg class="side-floral left" viewBox="0 0 80 220" fill="none" aria-hidden="true">
+        <path d="M40 18c12-4 22 8 16 20 12 4 10 22-4 24 4 16-10 26-16 20-8 6-22-4-16-20-14-2-16-20-4-24C18 26 28 14 40 18z" stroke="#d4af37" stroke-width="1.1"/>
+        <path d="M40 62c-3 28-12 58-22 78M40 62c3 28 12 58 22 78" stroke="#d4af37" stroke-width="1"/>
+        <path d="M28 118c-12 4-20-6-22-14m36 14c12 4 20-6 22-14" stroke="#d4af37" stroke-width="1"/>
+      </svg>
+      <svg class="side-floral right" viewBox="0 0 80 220" fill="none" aria-hidden="true">
+        <path d="M40 18c12-4 22 8 16 20 12 4 10 22-4 24 4 16-10 26-16 20-8 6-22-4-16-20-14-2-16-20-4-24C18 26 28 14 40 18z" stroke="#d4af37" stroke-width="1.1"/>
+        <path d="M40 62c-3 28-12 58-22 78M40 62c3 28 12 58 22 78" stroke="#d4af37" stroke-width="1"/>
+      </svg>
+
+      <div class="darwaza">
+        <div class="gate-light" aria-hidden="true"></div>
+        <div class="arch">
+          <div class="panel left">
+            <div class="panel-face">
+              <span class="jaali"></span>
+              <span class="knob"></span>
+            </div>
+          </div>
+          <div class="panel right">
+            <div class="panel-face">
+              <span class="jaali"></span>
+              <span class="knob"></span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="door-ui">
-        <div class="door-card">
-          <p class="door-letters"><span>M</span><i>&amp;</i><span>H</span></p>
-          <p class="open-hint">Tap to open</p>
+        <div class="gate-copy">
+          <p class="cordial">You Are Cordially Invited</p>
+          <p class="gate-bride">Malyika Khan</p>
+          <p class="gate-weds">Weds</p>
+          <p class="gate-groom">Hammad Saif</p>
+          <p class="gate-date">14 October 2026</p>
+          <button class="open-invite" id="openDoors" type="button">Open Invitation</button>
         </div>
       </div>
     </div>
