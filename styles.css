@@ -7,8 +7,8 @@ html {
 }
 
 :root {
-  --red: #7a1220;
-  --red-deep: #4a0c14;
+  --red: #8a1024;
+  --red-deep: #2a040b;
   --gold: #d4af37;
   --gold-soft: #e8c97a;
 }
@@ -29,7 +29,7 @@ body.locked {
   position: fixed;
   inset: 0;
   z-index: 40;
-  background: #5a0e16;
+  background: #2a040b;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -43,7 +43,7 @@ body.locked {
   z-index: 3;
   height: 42px;
   pointer-events: none;
-  background: linear-gradient(180deg, #3d0810, #7a1220);
+  background: linear-gradient(180deg, #1a0207, #6e0a18);
   box-shadow: 0 10px 18px rgb(0 0 0 / 25%);
 }
 
@@ -68,11 +68,11 @@ body.locked {
   height: 100%;
   background-image: repeating-linear-gradient(
     90deg,
-    #4e0c14 0px,
-    #7a1220 10px,
-    #a31d2e 16px,
-    #8b1624 22px,
-    #5c0e16 30px
+    #2a040b 0px,
+    #5c0816 10px,
+    #9a1230 16px,
+    #6e0a1c 22px,
+    #3b0610 30px
   );
 }
 
@@ -109,7 +109,7 @@ body.locked {
   gap: 0.55rem;
   border: 3px solid var(--gold);
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #b42335, #6b101c 62%, #430910);
+  background: radial-gradient(circle at 38% 32%, #c41432, #6e0a1c 62%, #2a040b);
   box-shadow:
     0 0 0 8px rgba(212, 175, 55, 0.22),
     0 18px 40px rgb(0 0 0 / 35%);
@@ -175,16 +175,16 @@ body.opened .doors {
 }
 
 .texture {
-  opacity: 0.55;
+  opacity: 0.9;
   background:
-    radial-gradient(1200px 700px at 50% 0%, rgba(232, 201, 122, 0.16) 0%, transparent 62%),
-    linear-gradient(180deg, #6b101c, #4a0c14 40%, #3a0910);
+    radial-gradient(1200px 700px at 50% 0%, rgba(196, 20, 50, 0.28) 0%, transparent 62%),
+    linear-gradient(180deg, #5c0816, #2a040b 42%, #1a0207);
 }
 
 .pattern {
-  opacity: 0.08;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath fill='none' stroke='%23d4af37' stroke-width='0.8' d='M32 4 L36 16 L48 20 L36 24 L32 36 L28 24 L16 20 L28 16 Z'/%3E%3C/svg%3E");
-  background-size: 64px 64px;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M70 42c10 0 18 8 18 18 0 16-18 28-18 38 0-10-18-22-18-38 0-10 8-18 18-18z'/%3E%3Cpath d='M70 48c-8 4-12 12-12 12m24 0s-4-8-12-12'/%3E%3Cpath d='M70 98c-12 10-24 16-28 16m28-16c12 10 24 16 28 16'/%3E%3Cpath d='M52 86c-10 2-18-4-20-10m56 10c10 2 18-4 20-10'/%3E%3Ccircle cx='70' cy='58' r='4'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.9' opacity='0.55'%3E%3Cpath d='M22 22c5 0 9 4 9 9 0 8-9 14-9 19 0-5-9-11-9-19 0-5 4-9 9-9z'/%3E%3Cpath d='M118 108c5 0 9 4 9 9 0 8-9 14-9 19 0-5-9-11-9-19 0-5 4-9 9-9z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 140px 140px;
 }
 
 .glow {
@@ -420,7 +420,7 @@ body.opened .scroll-hint {
 
 .card {
   border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(122, 18, 32, 0.45);
+  background: rgba(90, 8, 22, 0.55);
   padding: 1.6rem 1.3rem;
   text-align: left;
   color: var(--gold-soft);
