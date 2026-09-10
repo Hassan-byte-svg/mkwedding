@@ -29,7 +29,11 @@ body.locked {
   position: fixed;
   inset: 0;
   z-index: 40;
-  background: #2a040b;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 80, 110, 0.22), transparent 42%),
+    #1a0207;
+  perspective: 1700px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -39,38 +43,111 @@ body.locked {
   top: 0;
   width: 50%;
   height: 100%;
-  transition: transform 1.45s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transform-style: preserve-3d;
+  transition: transform 1.55s cubic-bezier(0.65, 0.05, 0.36, 1);
   will-change: transform;
 }
 
 .door.left {
   left: 0;
+  transform-origin: left center;
 }
 
 .door.right {
   right: 0;
+  transform-origin: right center;
 }
 
 .door-face {
+  position: relative;
   height: 100%;
-  background-image: repeating-linear-gradient(
-    90deg,
-    #2a040b 0px,
-    #5c0816 10px,
-    #9a1230 16px,
-    #6e0a1c 22px,
-    #3b0610 30px
-  );
+  overflow: hidden;
+  background:
+    linear-gradient(118deg, rgba(255, 190, 200, 0.28), transparent 38%),
+    linear-gradient(180deg, #e23a58 0%, #b0122e 32%, #6e0818 68%, #3a040c 100%);
+  box-shadow: inset 0 0 0 3px rgba(232, 201, 122, 0.55);
 }
 
 .door.left .door-face {
-  border-right: 2px solid var(--gold);
-  box-shadow: inset -18px 0 28px rgb(0 0 0 / 28%);
+  clip-path: polygon(0 10%, 0 0, 100% 7%, 100% 100%, 0 100%);
+  border-right: 1px solid rgba(240, 215, 138, 0.7);
+  box-shadow:
+    inset -40px 0 50px rgba(255, 140, 160, 0.12),
+    inset 18px 0 40px rgb(0 0 0 / 28%);
 }
 
 .door.right .door-face {
-  border-left: 2px solid var(--gold);
-  box-shadow: inset 18px 0 28px rgb(0 0 0 / 28%);
+  clip-path: polygon(0 7%, 100% 0, 100% 10%, 100% 100%, 0 100%);
+  border-left: 1px solid rgba(240, 215, 138, 0.7);
+  box-shadow:
+    inset 40px 0 50px rgba(255, 140, 160, 0.12),
+    inset -18px 0 40px rgb(0 0 0 / 28%);
+}
+
+.ice,
+.snowflake {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.ice {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 22px,
+      rgba(255, 220, 230, 0.08) 22px 23px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 22px,
+      rgba(255, 210, 220, 0.07) 22px 23px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 28%);
+}
+
+.snowflake {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='220' viewBox='0 0 160 220'%3E%3Cg fill='none' stroke='%23f0d78a' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M80 28v48m0-24l16-16M80 52L64 36M80 52l16 16M80 52L64 68'/%3E%3Cpath d='M56 52h48M80 52l18-10M80 52l18 10M80 52l-18-10M80 52l-18 10'/%3E%3Ccircle cx='80' cy='52' r='5' stroke='%23ffe7a8'/%3E%3Cpath d='M80 128v48m0-24l16-16M80 152L64 136M80 152l16 16M80 152L64 168'/%3E%3Cpath d='M56 152h48'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 160px 220px;
+  opacity: 0.55;
+}
+
+.door.left .snowflake {
+  background-position: 18% 12%;
+}
+
+.door.right .snowflake {
+  background-position: 82% 12%;
+}
+
+.door-face::before {
+  content: "";
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  width: 18%;
+  border: 1px solid rgba(240, 215, 138, 0.35);
+  box-shadow: inset 0 0 18px rgba(240, 215, 138, 0.12);
+}
+
+.door.left .door-face::before {
+  left: 10%;
+}
+
+.door.right .door-face::before {
+  right: 10%;
+}
+
+.door-face::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 22%;
+  right: 22%;
+  height: 38%;
+  border: 1px solid rgba(240, 215, 138, 0.28);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent);
+  clip-path: polygon(50% 0, 100% 18%, 100% 100%, 0 100%, 0 18%);
 }
 
 .door-ui {
@@ -96,9 +173,10 @@ body.locked {
   gap: 0.55rem;
   border: 3px solid var(--gold);
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #c41432, #6e0a1c 62%, #2a040b);
+  background: radial-gradient(circle at 38% 32%, #ff5a73, #c41432 48%, #5c0816 100%);
   box-shadow:
-    0 0 0 8px rgba(212, 175, 55, 0.22),
+    0 0 0 8px rgba(240, 215, 138, 0.28),
+    0 0 40px rgba(255, 80, 110, 0.35),
     0 18px 40px rgb(0 0 0 / 35%);
 }
 
@@ -129,11 +207,11 @@ body.locked {
 }
 
 body.opened .door.left {
-  transform: translateX(-102%);
+  transform: rotateY(-102deg);
 }
 
 body.opened .door.right {
-  transform: translateX(102%);
+  transform: rotateY(102deg);
 }
 
 body.opened .door-ui {
