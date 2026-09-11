@@ -65,7 +65,7 @@ function openInvitation() {
   doors.removeAttribute("tabindex");
   window.setTimeout(() => {
     doors.style.display = "none";
-  }, 1600);
+  }, 1650);
 }
 
 if (reduceMotion) {

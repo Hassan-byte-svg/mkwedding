@@ -30,17 +30,35 @@
     <link rel="stylesheet" href="gate.css" />
   </head>
   <body class="locked">
-    <div class="doors" id="doors" role="button" tabindex="0" aria-label="Tap to open the invitation">
-      <div class="door left" aria-hidden="true">
-        <div class="door-face"></div>
-      </div>
-      <div class="door right" aria-hidden="true">
-        <div class="door-face"></div>
-      </div>
-      <div class="door-ui">
-        <div class="door-card">
-          <p class="door-letters"><span>M</span><i>&amp;</i><span>H</span></p>
-          <p class="open-hint">Tap to open</p>
+    <div class="env-screen" id="doors" role="button" tabindex="0" aria-label="Click to open the invitation">
+      <div class="env-glow" aria-hidden="true"></div>
+      <svg class="sprig left" viewBox="0 0 80 260" fill="none" aria-hidden="true">
+        <path d="M40 250c-8-40-18-80-12-120 8-48 22-80 22-110" stroke="#9c86b0" stroke-width="1.4"/>
+        <path d="M32 70c-10-6-18-4-22 2m36-18c12-8 20-4 24 4M28 120c-12-4-20 0-24 8m44-8c14-6 22-2 26 6" stroke="#9c86b0" stroke-width="1.1"/>
+        <ellipse cx="22" cy="58" rx="7" ry="14" fill="#c4b0d6" opacity=".7" transform="rotate(-28 22 58)"/>
+        <ellipse cx="58" cy="48" rx="7" ry="14" fill="#d3c2e4" opacity=".75" transform="rotate(24 58 48)"/>
+        <ellipse cx="18" cy="108" rx="6" ry="13" fill="#b59bc8" opacity=".7" transform="rotate(-18 18 108)"/>
+        <ellipse cx="62" cy="100" rx="6" ry="13" fill="#cbb8dc" opacity=".7" transform="rotate(20 62 100)"/>
+      </svg>
+      <svg class="sprig right" viewBox="0 0 80 260" fill="none" aria-hidden="true">
+        <path d="M40 250c8-40 18-80 12-120-8-48-22-80-22-110" stroke="#9c86b0" stroke-width="1.4"/>
+        <ellipse cx="58" cy="58" rx="7" ry="14" fill="#c4b0d6" opacity=".7" transform="rotate(28 58 58)"/>
+        <ellipse cx="22" cy="48" rx="7" ry="14" fill="#d3c2e4" opacity=".75" transform="rotate(-24 22 48)"/>
+        <ellipse cx="62" cy="108" rx="6" ry="13" fill="#b59bc8" opacity=".7" transform="rotate(18 62 108)"/>
+        <ellipse cx="18" cy="100" rx="6" ry="13" fill="#cbb8dc" opacity=".7" transform="rotate(-20 18 100)"/>
+      </svg>
+
+      <div class="env-stage">
+        <div class="mono">
+          <span>M</span>
+          <i>♥</i>
+          <span>H</span>
+        </div>
+        <p class="open-line">Click to open the invitation</p>
+        <div class="envelope" aria-hidden="true">
+          <div class="pocket"></div>
+          <div class="flap"></div>
+          <div class="seal"></div>
         </div>
       </div>
     </div>

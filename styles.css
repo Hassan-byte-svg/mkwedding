@@ -689,9 +689,7 @@ body.opened .scroll-hint {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .doors,
-  .door,
-  .door-ui {
+  .env-screen {
     display: none;
   }
 

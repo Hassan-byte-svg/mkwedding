@@ -1,135 +1,187 @@
-.doors {
+.env-screen {
   position: fixed;
   inset: 0;
   z-index: 40;
   overflow: hidden;
-  background: #2a040b;
+  display: grid;
+  place-items: center;
   cursor: pointer;
+  background:
+    radial-gradient(circle at 50% 28%, #f7f1ea 0%, #efe4dc 46%, #e7d7e0 100%);
   -webkit-tap-highlight-color: transparent;
-  perspective: none;
 }
 
-.door {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  transform-style: flat;
-  transition: transform 1.45s cubic-bezier(0.65, 0.05, 0.36, 1);
-  will-change: transform;
-}
-
-.door.left {
-  left: 0;
-  transform-origin: left center;
-}
-
-.door.right {
-  right: 0;
-  transform-origin: right center;
-}
-
-.door-face {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  background: repeating-linear-gradient(
-    90deg,
-    #2a040b 0px,
-    #5c0816 10px,
-    #9a1230 16px,
-    #6e0a1c 22px,
-    #3b0610 30px
-  ) !important;
-  box-shadow: none;
-  clip-path: none !important;
-}
-
-.door.left .door-face {
-  border-right: 2px solid #fff;
-  box-shadow: inset -18px 0 28px rgb(0 0 0 / 28%) !important;
-}
-
-.door.right .door-face {
-  border-left: 2px solid #fff;
-  box-shadow: inset 18px 0 28px rgb(0 0 0 / 28%) !important;
-}
-
-.ice,
-.snowflake,
-.door-face::before,
-.door-face::after {
-  display: none !important;
-}
-
-.door-ui {
+.env-glow {
+  pointer-events: none;
   position: absolute;
   inset: 0;
-  z-index: 2;
+  background:
+    radial-gradient(circle at 50% 62%, rgba(255, 255, 255, 0.55), transparent 42%);
+}
+
+.sprig {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  width: min(28vw, 150px);
+  height: min(58vh, 420px);
+  opacity: 0.92;
+}
+
+.sprig.left {
+  left: 0;
+}
+
+.sprig.right {
+  right: 0;
+}
+
+.env-stage {
+  position: relative;
+  z-index: 1;
   display: flex;
+  width: min(92vw, 380px);
   flex-direction: column;
   align-items: center;
+  perspective: 1200px;
+}
+
+.mono {
+  display: flex;
+  width: 7.4rem;
+  height: 9.2rem;
+  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 1.5rem;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-}
-
-.door-card {
-  display: grid;
-  width: min(72vw, 16.8rem);
-  height: min(72vw, 16.8rem);
-  place-items: center;
-  align-content: center;
-  gap: 0.55rem;
-  border: 3px solid #fff;
+  gap: 0.15rem;
+  border: 1.5px solid #8d739c;
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #c41432, #6e0a1c 62%, #2a040b);
-  box-shadow:
-    0 0 0 8px rgba(255, 255, 255, 0.28),
-    0 18px 40px rgb(0 0 0 / 35%);
-}
-
-.door-letters {
-  margin: 0;
+  color: #6d567a;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3.1rem, 12vw, 5.1rem);
+  font-size: 2.35rem;
   font-weight: 500;
-  line-height: 1;
-  color: #fff;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  background: rgba(255, 252, 248, 0.35);
 }
 
-.door-letters i {
-  margin: 0 0.18em;
-  font-style: italic;
-  font-size: 0.55em;
-  color: #fff;
+.mono i {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: #8d739c;
 }
 
-.open-hint {
-  margin: 0;
+.open-line {
+  margin: 1.15rem 0 1.6rem;
   font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #fff;
+  color: #7a657f;
 }
 
-body.opened .door.left {
-  transform: translateX(-102%) !important;
+.envelope {
+  position: relative;
+  width: 100%;
+  height: min(38vw, 168px);
+  max-height: 190px;
+  min-height: 132px;
+  transform-style: preserve-3d;
 }
 
-body.opened .door.right {
-  transform: translateX(102%) !important;
+.pocket {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 4px 4px 10px 10px;
+  background:
+    linear-gradient(180deg, #f7f0e8 0%, #efe4d6 100%);
+  box-shadow:
+    0 18px 40px rgb(90 70 80 / 18%),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
 }
 
-body.opened .door-ui {
+.pocket::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 18px,
+      rgba(141, 115, 156, 0.04) 18px 19px
+    );
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 72%;
+  transform-origin: top center;
+  background: linear-gradient(180deg, #fbf6ef, #eadfce);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  box-shadow: 0 10px 18px rgb(80 60 70 / 12%);
+  transition: transform 1.15s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.seal {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, #c4a4cf, #8d6b9a 55%, #6a4d78);
+  box-shadow:
+    0 8px 16px rgb(90 60 90 / 28%),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transform: translate(-50%, -20%);
+  transition: opacity 0.45s ease;
+}
+
+.seal::after {
+  content: "MH";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #f7eef8;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+body.opened .flap {
+  transform: rotateX(-168deg);
+}
+
+body.opened .seal {
   opacity: 0;
-  pointer-events: none;
 }
 
-body.opened .doors {
+body.opened .env-screen {
   pointer-events: none;
+  animation: env-fade 0.55s ease 1.05s forwards;
+}
+
+@keyframes env-fade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .sprig {
+    width: 78px;
+    opacity: 0.8;
+  }
+
+  .mono {
+    width: 6.4rem;
+    height: 8rem;
+    font-size: 2rem;
+  }
 }
