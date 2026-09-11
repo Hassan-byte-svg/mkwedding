@@ -8,15 +8,15 @@ html {
 
 :root {
   --red: #8a1024;
-  --red-deep: #2a040b;
-  --gold: #d4af37;
-  --gold-soft: #e8c97a;
+  --red-deep: #8a1024;
+  --gold: #8a1024;
+  --gold-soft: #8a1024;
 }
 
 body {
   margin: 0;
-  background: var(--red-deep);
-  color: var(--gold-soft);
+  background: #fff;
+  color: #8a1024;
   font-family: Outfit, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -240,22 +240,20 @@ body.opened .doors {
 }
 
 .texture {
-  opacity: 0.9;
-  background:
-    radial-gradient(1200px 700px at 50% 0%, rgba(196, 20, 50, 0.28) 0%, transparent 62%),
-    linear-gradient(180deg, #5c0816, #2a040b 42%, #1a0207);
+  opacity: 1;
+  background: #fff;
 }
 
 .pattern {
-  opacity: 0.28;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23d4af37' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(80 62)' stroke-width='1.2'%3E%3Cpath d='M0-22c10-6 22 2 20 14 10 4 8 20-4 24 4 14-10 24-20 20-10 4-24-6-20-20-12-4-14-20-4-24C-22-20-10-28 0-22z'/%3E%3Cpath d='M0-8c8-4 12 2 10 8 4 2 2 10-4 10 2 8-6 12-10 8-4 4-12 0-10-8-6 0-8-8-4-10C-12-6-8-12 0-8z'/%3E%3Ccircle cx='0' cy='2' r='3.2'/%3E%3C/g%3E%3Cpath stroke-width='1.1' d='M80 86c-2 14-8 28-16 36m16-36c2 14 8 28 16 36'/%3E%3Cpath stroke-width='1.1' d='M70 108c-14 2-24-8-26-16m46 16c14 2 24-8 26-16'/%3E%3Cg transform='translate(28 28) scale(0.42)' stroke-width='2.2'%3E%3Cpath d='M0-22c10-6 22 2 20 14 10 4 8 20-4 24 4 14-10 24-20 20-10 4-24-6-20-20-12-4-14-20-4-24C-22-20-10-28 0-22z'/%3E%3C/g%3E%3Cg transform='translate(132 124) scale(0.42)' stroke-width='2.2'%3E%3Cpath d='M0-22c10-6 22 2 20 14 10 4 8 20-4 24 4 14-10 24-20 20-10 4-24-6-20-20-12-4-14-20-4-24C-22-20-10-28 0-22z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: 160px 160px;
+  opacity: 0.42;
+  background-image: url("https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=72&h=72&q=70");
+  background-size: 48px 48px;
+  background-repeat: repeat;
 }
 
 .glow {
   opacity: 0;
-  background: radial-gradient(circle at 50% 28%, rgba(212, 175, 55, 0.28), transparent 46%);
-  transition: opacity 1.2s ease 0.2s;
+  background: none;
 }
 
 body.opened .glow {
@@ -318,11 +316,7 @@ body.opened .glow {
 }
 
 .float {
-  position: absolute;
-  width: 64px;
-  color: var(--gold);
-  opacity: 0.45;
-  animation: float 9s ease-in-out infinite;
+  display: none;
 }
 
 .float.a {
@@ -484,11 +478,11 @@ body.opened .scroll-hint {
 }
 
 .card {
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(90, 8, 22, 0.55);
+  border: 1px solid rgba(138, 16, 36, 0.18);
+  background: rgba(255, 255, 255, 0.78);
   padding: 1.6rem 1.3rem;
   text-align: left;
-  color: var(--gold-soft);
+  color: #8a1024;
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.4s ease;
@@ -518,9 +512,10 @@ body.opened .scroll-hint {
 }
 
 .cell {
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  border: 1px solid rgba(138, 16, 36, 0.22);
   padding: 1.15rem 0.35rem 1rem;
-  color: var(--gold-soft);
+  color: #8a1024;
+  background: rgba(255, 255, 255, 0.7);
   animation: pulse 3.6s ease-in-out infinite;
 }
 
@@ -582,10 +577,10 @@ body.opened .scroll-hint {
 }
 
 .btn.gold {
-  color: var(--red-deep);
-  background: linear-gradient(110deg, #9a743f, #d4af37 42%, #f0e0a8 50%, #d4af37 58%, #9a743f);
+  color: #fff;
+  background: #8a1024;
   background-size: 220% 100%;
-  border: 1px solid var(--gold);
+  border: 1px solid #8a1024;
 }
 
 .btn.gold:hover {

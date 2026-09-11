@@ -46,12 +46,12 @@
 }
 
 .door.left .door-face {
-  border-right: 2px solid var(--gold);
+  border-right: 2px solid #fff;
   box-shadow: inset -18px 0 28px rgb(0 0 0 / 28%) !important;
 }
 
 .door.right .door-face {
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid #fff;
   box-shadow: inset 18px 0 28px rgb(0 0 0 / 28%) !important;
 }
 
@@ -83,11 +83,11 @@
   place-items: center;
   align-content: center;
   gap: 0.55rem;
-  border: 3px solid var(--gold);
+  border: 3px solid #fff;
   border-radius: 50%;
   background: radial-gradient(circle at 38% 32%, #c41432, #6e0a1c 62%, #2a040b);
   box-shadow:
-    0 0 0 8px rgba(212, 175, 55, 0.22),
+    0 0 0 8px rgba(255, 255, 255, 0.28),
     0 18px 40px rgb(0 0 0 / 35%);
 }
 
@@ -97,7 +97,7 @@
   font-size: clamp(3.1rem, 12vw, 5.1rem);
   font-weight: 500;
   line-height: 1;
-  color: var(--gold-soft);
+  color: #fff;
   letter-spacing: 0.06em;
 }
 
@@ -105,7 +105,7 @@
   margin: 0 0.18em;
   font-style: italic;
   font-size: 0.55em;
-  color: var(--gold);
+  color: #fff;
 }
 
 .open-hint {
@@ -114,7 +114,7 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #fff;
 }
 
 body.opened .door.left {
