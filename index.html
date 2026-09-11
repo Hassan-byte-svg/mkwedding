@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -54,119 +54,55 @@
           <i>♥</i>
           <span>H</span>
         </div>
-        <p class="open-line">Click to open the invitation</p>
         <div class="envelope" aria-hidden="true">
           <div class="pocket"></div>
           <div class="flap"></div>
           <div class="seal"></div>
         </div>
+        <p class="open-line">Click to open the invitation</p>
       </div>
     </div>
 
     <article class="invite">
       <div class="texture" aria-hidden="true"></div>
-      <div class="pattern" aria-hidden="true"></div>
-      <div class="glow" aria-hidden="true"></div>
+      <svg class="sprig left page-sprig" viewBox="0 0 80 260" fill="none" aria-hidden="true">
+        <path d="M40 250c-8-40-18-80-12-120 8-48 22-80 22-110" stroke="#9c86b0" stroke-width="1.4"/>
+        <ellipse cx="22" cy="58" rx="7" ry="14" fill="#c4b0d6" opacity=".7" transform="rotate(-28 22 58)"/>
+        <ellipse cx="58" cy="48" rx="7" ry="14" fill="#d3c2e4" opacity=".75" transform="rotate(24 58 48)"/>
+      </svg>
+      <svg class="sprig right page-sprig" viewBox="0 0 80 260" fill="none" aria-hidden="true">
+        <path d="M40 250c8-40 18-80 12-120-8-48-22-80-22-110" stroke="#9c86b0" stroke-width="1.4"/>
+        <ellipse cx="58" cy="58" rx="7" ry="14" fill="#c4b0d6" opacity=".7" transform="rotate(28 58 58)"/>
+        <ellipse cx="22" cy="48" rx="7" ry="14" fill="#d3c2e4" opacity=".75" transform="rotate(-24 22 48)"/>
+      </svg>
 
       <header class="hero">
-        <div class="frame" aria-hidden="true">
-          <span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span>
+        <div class="mono reveal-hero">
+          <span>M</span>
+          <i>♥</i>
+          <span>H</span>
         </div>
-        <svg class="float a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-          <path d="M18 102c22-6 38-22 44-44 4 18 18 32 40 38" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
-          <path d="M28 88c8-14 10-28 8-42M92 88c-8-14-10-28-8-42" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-          <circle cx="60" cy="28" r="2.2" fill="currentColor" />
-        </svg>
-        <svg class="float b" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-          <path d="M18 102c22-6 38-22 44-44 4 18 18 32 40 38" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
-          <circle cx="60" cy="28" r="2.2" fill="currentColor" />
-        </svg>
-        <p class="eyebrow reveal-hero">Wedding Invitation</p>
-        <div class="divider reveal-hero" aria-hidden="true"></div>
-        <h1 class="name bride">Malyika Khan</h1>
-        <p class="weds">Weds</p>
-        <h2 class="name groom">Hammad Saif</h2>
-        <p class="date-hero reveal-hero">16 October 2026</p>
-        <p class="line reveal-hero">Together with their families,<br />we invite you to celebrate their special day.</p>
-        <p class="scroll-hint reveal-hero">Scroll to details</p>
+        <p class="eyebrow reveal-hero">With the blessing of God</p>
+        <h1 class="script-names reveal-hero">Malyika &amp; Hammad</h1>
+        <p class="invite-line reveal-hero">Invite you to their wedding</p>
+        <p class="date-line reveal-hero">16 <span>|</span> October <span>|</span> 2026</p>
+        <p class="venue-line reveal-hero">The Millennium Marque</p>
+        <p class="venue-sub reveal-hero">E-11/4, Islamabad</p>
+        <div id="countdown" class="countdown reveal-hero" role="timer" aria-live="polite"></div>
+        <p class="click-btns reveal-hero">Click the buttons</p>
+        <div class="buttons reveal-hero">
+          <a
+            class="btn gold"
+            href="https://www.google.com/maps/search/?api=1&query=The%20Millennium%20Marque%20E-11%2F4%20Islamabad%20Pakistan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Location
+          </a>
+          <a class="btn ghost" href="tel:+923275602384">Hassan Khan · 03275602384</a>
+          <a class="btn ghost" href="tel:+923465009988">Nadeem Qaiser · 03465009988</a>
+        </div>
       </header>
-
-      <section class="section">
-        <p class="kicker reveal">Counting the moments</p>
-        <h2 class="heading reveal">Until we gather</h2>
-        <div id="countdown" class="countdown reveal" role="timer" aria-live="polite"></div>
-      </section>
-
-      <section class="section">
-        <p class="kicker reveal">The celebration</p>
-        <h2 class="heading reveal">Event details</h2>
-        <div class="divider reveal" aria-hidden="true"></div>
-        <div class="grid">
-          <div class="card reveal">
-            <p class="label">Date</p>
-            <h3>16 October 2026</h3>
-            <p class="copy">A day of blessing, gathering, and joy.</p>
-          </div>
-          <div class="card reveal">
-            <p class="label">Venue</p>
-            <h3>The Millennium Marque</h3>
-            <p class="copy">E-11/4, Islamabad</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card reveal">
-          <p class="label">Location</p>
-          <h3>The Millennium Marque</h3>
-          <p class="copy">E-11/4, Islamabad, Pakistan</p>
-          <div class="map">
-            <p class="kicker">Find us</p>
-            <p>The Millennium Marque · E-11/4, Islamabad</p>
-          </div>
-          <div class="buttons">
-            <a
-              class="btn gold"
-              href="https://www.google.com/maps/search/?api=1&query=The%20Millennium%20Marque%20E-11%2F4%20Islamabad%20Pakistan"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Location on Google Maps
-            </a>
-            <a
-              class="btn ghost"
-              href="https://www.google.com/maps/dir/?api=1&destination=The%20Millennium%20Marque%20E-11%2F4%20Islamabad%20Pakistan"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Directions
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <p class="kicker reveal">For information contact</p>
-        <h2 class="heading reveal">We are here to help</h2>
-        <div class="divider reveal" aria-hidden="true"></div>
-        <div class="contacts">
-          <div class="card reveal">
-            <p class="label">Contact</p>
-            <h3>HASSAN KHAN</h3>
-            <a href="tel:+923275602384">03275602384</a>
-          </div>
-          <div class="card reveal">
-            <p class="label">Contact</p>
-            <h3>NADEEM QAISER</h3>
-            <a href="tel:+923465009988">03465009988</a>
-          </div>
-        </div>
-      </section>
-
-      <footer class="close">
-        <div class="divider" aria-hidden="true"></div>
-        <p class="reveal">With love, the families of Malyika &amp; Hammad</p>
-      </footer>
     </article>
     <script src="script.js"></script>
   </body>
